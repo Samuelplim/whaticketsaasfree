@@ -49,6 +49,9 @@ services:
     build:
       context: ./frontend
       dockerfile: ./Dockerfile
+      args:
+        - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
+        - REACT_APP_HOURS_CLOSE_TICKETS_AUTO=${REACT_APP_HOURS_CLOSE_TICKETS_AUTO}
     image: whaticket-frontend:latest
     environment:
       - BACKEND_URL=${BACKEND_URL}
